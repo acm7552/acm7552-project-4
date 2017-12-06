@@ -1,35 +1,42 @@
 
-#NavBar{
-    width: 100%;
-    margin: 0 0 0 23%;
-
-}
-
-nav ul{
-    width: 90%;
-    margin: 0;
-    height: 100px;
+main{
+    width: 60%;
+    height: 600px;
+    border: 2px solid black;
+    border-radius: 8px;
     
 }
+
+
+#index{
+    margin-left: 12%;
+}
+
 
 nav li{
-    margin-left: 2%;
-    
+    margin-left: 8%;
+    float: none;
 }
 
-h4{
+li h4{
     color: black;
+    font-size: 2.5vw;
+    margin-top: -1%;
+    padding-top: 5%;
 }
 
+svg{
+    width: 80%;
+    height: 500px;
+
+}
 a{
     height: 100%;
-    padding-top: 2%;
 }
 
-a:hover{
-    height: 100%;
-    padding-top: 6%;
-    margin-bottom: -6%;
+a:hover{   
+   padding-top: 6%;    
+   height: 60px;
     
 }
 
@@ -37,8 +44,6 @@ a:hover{
     margin-bottom: 0;
     padding: 0;
     padding-left: 14%;
-
-
 }
 
 .button-collapse{
@@ -50,9 +55,7 @@ a:hover{
    padding-top: 0;
 }
 
-
 nav{
-    margin-bottom: 20px;
     border-top: 2px solid black;
-    border-bottom:2px solid black;
+    border-bottom:2px solid black;  
 }
