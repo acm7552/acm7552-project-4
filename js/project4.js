@@ -87,13 +87,23 @@ var aLoop = function(y){
      
 }
 
+document.querySelector("#colorChooser").onchange = (e)=> {
+    var color = e.target.value;
+    sail.attr({
+        fill: color,
+    });
+}
+
 var Bob = function(){
     
     aLoop(350);
 }
 g.animate({ transform: 'translate(' + 2 * centerX/ 5 + ',' + centerY/3 + ')'}, 0, );
 Bob()
+
+
 })
+
 
 
 
