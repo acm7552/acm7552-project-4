@@ -1,3 +1,5 @@
+
+
 $( document ).ready(function(){
 
     $(".button-collapse").sideNav();
@@ -23,10 +25,6 @@ var board = document.getElementById("board");
 
 var centerX = board.offsetWidth;
 var centerY = board.offsetHeight;
-
-console.log(centerY);
-console.log(5);
-
 
 
 skyrect.attr(
@@ -60,10 +58,6 @@ sail.attr({
 
 
 
-
-
-
-
 //FUNCTIONS
 
 //We loop a bobbing animation forever for the first interactible
@@ -83,24 +77,28 @@ var aLoop = function(y){
     ({y: y}, 2400, function(){
         aLoop(newY)
 
-    })
-     
-}
-
-document.querySelector("#colorChooser").onchange = (e)=> {
-    var color = e.target.value;
-    sail.attr({
-        fill: color,
-    });
+    })   
 }
 
 var Bob = function(){
     
     aLoop(350);
 }
-g.animate({ transform: 'translate(' + 2 * centerX/ 5 + ',' + centerY/3 + ')'}, 0, );
+g.animate({ transform: 'translate(' + 2 * centerX/ 5 + ',' + centerY/3 + ')'}, 10, );
 Bob()
 
+
+
+// Changes the color of the sail
+var sailcolor = document.querySelector("#colorChooser").value;
+
+document.querySelector("#colorChooser").onchange = (e)=> {
+    sailcolor = e.target.value;
+    sail.attr({
+        fill: sailcolor,
+    });
+
+}
 
 })
 
