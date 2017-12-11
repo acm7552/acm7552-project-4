@@ -9,6 +9,7 @@ $( document ).ready(function(){
     var s = Snap("#svg2");
     
     var skyrect = s.rect(0,0,5000,5000);
+    var sandrect = s.rect(0, 300, 5000, 1040);
     
     
     
@@ -31,10 +32,10 @@ $( document ).ready(function(){
     
 
     //Randomly place islands on the board
-    for (i = 0; i < 7; i++)
+    for (i = 0; i < 5; i++)
     {
         var newX = ((Math.random() * centerX) + 70) * .7;
-        var newY = ((Math.random() * centerY) + 70)  * .7;
+        var newY = 300;
         var island = s.circle(newX, newY, 25);
         var island2 = s.circle(newX + 30, newY, 23);
         var islemask = s.rect(newX-50, newY - 90, 800, 90);
@@ -78,7 +79,10 @@ $( document ).ready(function(){
         fill: "#22cef9",
     });
         
-
+    sandrect.attr(
+        {
+            fill: "#0655d3",
+        });
         
     hull.attr(
     {
@@ -143,17 +147,69 @@ $( document ).ready(function(){
                   centerY = board.offsetHeight;  
               g.animate({
                 transform: 'translate(' + centerX/3 + ',' + 
-                  2*centerY/3 + ")"}, 2000, function(){
+                2*centerY/3 + ")"}, 2000, function(){
                     aLoop()
                   })  
                 }
 
 
+    var aHex = function(){
+                    
+            centerX = board.offsetWidth;
+            centerY = board.offsetHeight;  
+                  
+                       
+            g.animate({
+                transform: 'translate(' + 0 + ',' + 
+                0 + ")"}, 1500,function(){
+                aHex2()
+                })          
+        }
+    var aHex2 = function(){
+            
+    centerX = board.offsetWidth;
+    centerY = board.offsetHeight;  
+          
+               
+    g.animate({
+        transform: 'translate(' + centerX/2 + ',' + 
+        6 + ")"}, 1500,function(){
+        aHex3()
+        })          
+    }
+
+    var aHex3 = function(){
+        
+    centerX = board.offsetWidth;
+    centerY = board.offsetHeight;  
+      
+           
+    g.animate({
+        transform: 'translate(' + 2*centerX/3 + ',' + 
+        centerY/2+ ")"}, 1500,function(){
+        aHex()
+        })         
+}
+
+$( "#board" ).click(function() {
+    var posx = 0;
+	var posy = 0;
+	
+	posx =   + event.clientX * 0.7 - ($("#svg2").offset().left * 0.5);
+			 
+	posy =  event.clientY + document.body.scrollTop
+             - $("#svg2").offset().top * 1.1;
+        console.log(posx);
+	
+
+    g.animate({transform: 'transplate(' + posx + ',' + 
+250 + ')'}, 1200)
+  });
+
 
    
     
 
-    aLoop();
     // Changes the color of the sail
 var sailcolor = document.querySelector("#colorChooser").value;
 
