@@ -100,7 +100,8 @@ $( document ).ready(function(){
 
         moon.animate({
             transform: 'translate(' + centerX-10 + ',' + 
-        })
+        100 + ')'}, 2400
+    )
 
         sandrect.animate
         ({fill: "rgba(0, 0, 117, 1)"}, 2400
