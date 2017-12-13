@@ -12,7 +12,7 @@ $( document ).ready(function(){
 
     var skyrect = s.rect(0,0,5000,5000);
     var sun = s.circle(10, 100, 80);
-    var moon = s.circle(centerX-10, 500, 80);
+    var moon = s.circle(10, 100, 80);
     var sandrect = s.rect(0, 300, 5000, 1040);
     
     
@@ -30,7 +30,7 @@ $( document ).ready(function(){
     
     moon.attr(
     {
-        fill: "#white",
+        fill: "#c9c9c9",
     });
 
     skyrect.attr(
@@ -71,6 +71,13 @@ $( document ).ready(function(){
     });
     
 
+    var hours = 12;
+    
+    document.querySelector("#hourChooser").onchange = (e)=> {
+        hours = e.target.value;
+        
+    }
+
     //Expanding on the first interactible
     var aLoop = function(y){
       
@@ -80,35 +87,34 @@ $( document ).ready(function(){
         
                   
         g.animate({
-            transform: 'translate(' + 2 * centerX/ 5 + ',' + (200 - ((newY - y)/4)) + ")"}, 2400, );
+            transform: 'translate(' + 2 * centerX/ 5 + ',' + (200 - ((newY - y)/4)) + ")"}, hours * 200, );
         
         hullMask.animate
-        ( {height: 50 - y/100}, 2400 );
+        ( {height: 50 - y/100}, hours * 200 );
             
         skyrect.animate
-        ({fill: "black"}, 2400
+        ({fill: "black"}, hours * 200
 
         )
         sun.animate({
-            transform: 'translate(10, 500)'}, 2400, 
+            transform: 'translate(10, 500)'}, hours * 200, 
         
         )
         sun.animate({
-            fill: 'rgba(240, 36, 0, 1)'}, 2400 
+            fill: 'rgba(240, 36, 0, 1)'}, hours * 200
         
         )
 
         moon.animate({
-            transform: 'translate(' + centerX-10 + ',' + 
-        100 + ')'}, 2400
+            transform: 'translate(' + (2*centerX/3) + ',100)'}, hours * 200
     )
 
         sandrect.animate
-        ({fill: "rgba(0, 0, 117, 1)"}, 2400
+        ({fill: "rgba(0, 0, 117, 1)"}, hours * 200
           
         )  
         sandrect.animate
-        ({y: y}, 2400, function(){
+        ({y: y}, hours * 200, function(){
             aLoop2(newY)
           
         })   
@@ -122,30 +128,34 @@ $( document ).ready(function(){
           
                     
           g.animate({
-              transform: 'translate(' + 2 * centerX/ 5 + ',' + (200 - ((newY - y)/4)) + ")"}, 2400, );
+              transform: 'translate(' + 2 * centerX/ 5 + ',' + (200 - ((newY - y)/4)) + ")"}, hours * 200, );
           
           hullMask.animate
-          ( {height: 50 - y/100}, 2400 );
+          ( {height: 50 - y/100}, hours * 200);
               
           skyrect.animate
-          ({fill: "black"}, 2400
+          ({fill: "rgba(34, 206, 249, 1)"}, hours * 200
   
           )
           sun.animate({
-              transform: 'translate(10, 100)'}, 2400, 
+              transform: 'translate(10, 100)'}, hours * 200, 
           
           )
           sun.animate({
-              fill: 'rgba(240, 36, 0, 1)'}, 2400 
+              fill: 'rgba(255, 240, 0, 1)'}, hours * 200
           
           )
+
+          moon.animate({
+            transform: 'translate(' + (2*centerX/3) + ',500)'}, hours * 200
+    )
   
           sandrect.animate
-          ({fill: "rgba(0, 0, 117, 1)"}, 2400
+          ({fill: "rgba(0, 0, 117, 1)"}, hours * 200
             
           )  
           sandrect.animate
-          ({y: y}, 2400, function(){
+          ({y: y}, hours * 200, function(){
               aLoop(newY)
             
           })   

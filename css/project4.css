@@ -5,6 +5,7 @@ main{
     border-radius: 8px;
     padding-bottom: 5px;
     max-width: 1000px;
+    min-width: 350px;
     
 }
 
@@ -36,13 +37,27 @@ svg{
 }
 
 p{
-    font-size: 15px;
+    font-size: 18px;
     margin: 0;
     margin-bottom: 5%;
     padding: 0;
    
 }
 
+img {
+    width: 300px;
+    max-width: 300px;
+    float: left;
+}
+
+article{
+    float: left;
+    width: 80%;
+    min-width: 325px;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
+}
 a{
     height: 100%;
 }
@@ -83,3 +98,10 @@ nav{
         border-radius: 8px;
        
     }
+
+#hourChooser{
+    display: inline;
+    border: 2px solid black;
+    border-radius: 8px;
+       
+}

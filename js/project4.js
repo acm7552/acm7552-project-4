@@ -97,7 +97,6 @@ document.querySelector("#colorChooser").onchange = (e)=> {
     sail.attr({
         fill: sailcolor,
     });
-
 }
 
 })
